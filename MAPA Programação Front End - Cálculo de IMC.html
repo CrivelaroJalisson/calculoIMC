@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="pt-br">
+	
+<!-- Aluno: Jálisson W. de J. Crivelaro  R.A: 1958083-5  Curso: Sistemas para Internet --> 
+	
+<head>
+	 <style>
+		 fieldset{
+			 background-color: #EFEFEF;
+		 }
+		 
+		 p{
+			 font-family: Consolas;
+		 }
+		 
+		 body{
+			 color: black;			 
+		 }
+		 
+		 legend{			 
+			 background-color: #EFEFEF;
+			 font-size: 25px;
+			 border: solid;			 
+		 }	 		
+</style>
+	
+<meta charset="utf-8">	
+
+<title>Cálculo de IMC</title>	
+	
+<script type="text/javascript">	
+ function calculaIMC()
+ { 
+var peso, altura, imc, cond;
+ peso=document.getElementById("peso").value;
+ altura=document.getElementById("altura").value/100;
+ imc=peso/(altura*altura);
+ document.getElementById("imc").value=imc.toFixed(2);
+
+if(imc<18.5){
+cond="Você está abaixo do peso com esse índice";
+}
+else if(imc>=18.5 && imc<=25){
+cond="Você está no peso ideal com esse índice";
+}
+else if(imc>25 && imc<=30) {
+cond="Você está com sobrepeso com esse índice";
+}
+else if(imc>30 && imc<=35) {
+cond="Você está com obesidade grau 1 com esse índice";
+}
+else if(imc>35 && imc<=40) {
+cond="Você está com obesidade grau 2 com esse índice";
+}
+else if (imc>40){
+cond="Você está com obesidade grau 3 com esse índice";
+}
+document.getElementById("cond").value=cond;
+ }
+
+    </script>
+
+   </head>
+
+ <body>	
+	 
+ <form name="1" id="1" action="">	
+
+  <fieldset style="border: solid">	
+
+   <legend align="center"><b>Cálculo de IMC - Índice de Massa Corporal</b></legend>
+	
+ <p align="center"><b>Informe seu peso em KG:</b>
+ <input type="text" name="peso" id="peso" size="3" maxlength="4">
+ </p>	
+
+ <p align="center"><b>Informe sua altura em CM:</b> 
+ <input type="text" name="altura" id="altura" size="4" maxlength="4"> 
+ </p>
+	
+<p align="center">	
+ <input type="button" value="Calcular" onClick="calculaIMC()">
+ </p>
+	
+ <p align="center"><b>IMC: 
+ <input type="text" name="imc" id="imc" size="10" maxlength="15">
+ Condição do IMC:</b>
+ <input type="text" name="cond" id="cond" size="42">
+ </p>
+	
+</fieldset>
+
+</form>	 
+
+ </body>	
+ 
+</html>
